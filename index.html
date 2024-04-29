@@ -9,11 +9,13 @@
 <body>
     <header>
         <div class="top-button">
-            <a href="Signup.html" class="top-button button1" onclick="alert('Proceeding to Sign Up')">Sign Up</a>
-            <a href="help.html" class="top-button button2" onclick="alert('Going to Help Centre')">Help</a>
-            <a href="Support.html" class="top-button button3" onclick="alert('Support Us by doing these:')">Support</a>
-            <a href="Aboutus.html" class="top-button button4" onclick="alert('Proceeding to About Us')">About Us</a>
-        </div>
+             <a href="Signup.html" button class="top-button button1" onclick="alert('Proceeding to Sign Up')">Sign Up</button></a>
+                            
+                <a href="help.html" button class="top-button button2" onclick="alert('Going to Help Centre')">Help</button></a>
+                              
+                <a href="Support.html" button class="top-button button3" onclick="alert('Support Us by doing these:')">Support</button></a>
+                               
+               <a href="Aboutus.html" button class="top-button button4" onclick="alert('Proceeding to About Us')">About Us</button></a>
     </header>
     <div class="login-container">
         <h2>ANIWORLD</h2>
@@ -32,30 +34,32 @@
         </div>
     </div>
     <script>
-        function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+     
+        var passwordInput = document.getElementById("password");
 
-            if (username === "user" && password === "password") {
-                alert("Login successful!");
-                window.location.href = "webp.html";
+       
+        passwordInput.addEventListener("keyup", function(event) {
+           
+            if (event.keyCode === 13) {
                 
-            } else {
-                alert("Invalid username or password!");
-            }
-        }
-
-        
-        document.getElementById("password").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
+                event.preventDefault();
+                
                 login();
             }
         });
+
+        
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            alert("Username: " + username + "\nPassword: " + password);
+        }
+        
     </script>
+   
 </body>
 </html>
-
-            
          
            
       
